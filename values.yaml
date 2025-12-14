@@ -1,3 +1,9 @@
+# deployment:
+#   replicas: 5
+#   image: stable-bookworm-perl
+# service:
+#   type: LoadBalancer
+#   servicePort: 80
 deployment:
   replicas: 5
   image: stable-bookworm-perl
