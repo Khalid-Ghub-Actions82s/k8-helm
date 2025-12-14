@@ -7,8 +7,8 @@ spec:
   selector:
     project: roboshop
     purpose: helm-demo
-ports:
-  protocal: TCP
-  port: {{ .Version.service.servicePort }}
-  targetport: 80
-  NodePort: 3007
+  ports:
+    protocal: TCP
+    port: {{ .Version.service.servicePort }}
+    targetport: 80
+    NodePort: 3007
