@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+{% comment %} apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
@@ -23,4 +23,28 @@ template:
   spec:
    containers:
    - name: nginx
-     image: {{ .Values.deploymnent.imageversion}}
+     image: {{ .Values.deploymnent.imageversion}} {% endcomment %}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    project: roboshop
+    purpose: dp-demo
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      project: roboshop
+      purpose: helm-demo
+  # pod definition
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        purpose: helm-demo
+    spec:
+      containers:
+        - name: nginx
+          image: {{ .Values.deployment.image }}
