@@ -3,4 +3,4 @@ name: nginx #chart name
 version: 1.0.1 #chart version
 description: upgrading to stable-perl version
 appVersion: stable-perl # this is application version
-# note: make chart.yaml C should be capital : Shaik Khali Ahmed
+# note: make chart.yaml C should be capital
