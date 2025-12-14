@@ -6,7 +6,7 @@
 #   servicePort: 80
 deployment:
   replicas: 5
-  image: stable-bookworm-perl
+  image: trixie-perl
 service:
   type: LoadBalancer
   servicePort: 80
