@@ -7,7 +7,7 @@ metadata:
   project: roboshop
   purpose: dp-demo
 spec:
-  replicas: {{ .Values.Deploymnent.replicas}}
+  replicas: {{ .Values.deploymnent.replicas}}
   selector:
   # these labels are used to register pod
   matachlabels:
@@ -23,4 +23,4 @@ template:
   spec:
    containers:
    - name: nginx
-     image: {{ .Values.Deploymnent.imageversion}}
+     image: {{ .Values.deploymnent.imageversion}}
