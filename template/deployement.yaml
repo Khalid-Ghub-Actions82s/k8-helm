@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Deploymnent
+metadata:
+  name: nginx
+  #these are replicaset labels
+  labels:
+  project: roboshop
+  purpose: dp-demo
+spec:
+  replicas: {{ .Values.Deploymnent.replicas}}
+  selector:
+  # these labels are used to register pod
+  matachlabels:
+   project: roboshop
+   purpose: helm-demo
+#pod definition
+template:
+  metadata:
+  name: Pod #it's written for pod 
+  labels: 
+    project: roboshop
+    purpose: helm-demo
+  spec:
+   containers:
+   - name: nginx
+     image: {{ .Values.Deploymnent.imageversion}}
