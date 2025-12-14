@@ -3,11 +3,12 @@ kind: service
 metadata:
   name: nginx-lb
 spec:
-  type: {{ .Version.service.type }}
+  type: {{ .Values.service.type }}
   selector:
     project: roboshop
     purpose: helm-demo
   ports:
   -  protocal: TCP
-     port: {{ .Version.service.servicePort }}
+     port: {{ .Values.service.servicePort }}
      targetport: 80
+     nodePort: 30007
